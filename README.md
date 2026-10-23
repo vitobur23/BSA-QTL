@@ -80,7 +80,7 @@ correlation t and the bound h2 <= 2t with family-level bootstrap confidence inte
 tests the reciprocal-cross effect. Inputs: `crossing_design.csv` / genealogy table and the
 phenotype table (`F2-both-treatments.xlsx`).
 
-### 6. FST scan (`08_fst_scan/`)
+### 6. FST scan (`06_fst_scan/`)
 [TO BE ADDED: FST in 1 kbp windows with piawka, top 1% windows, window-to-gene assignment with
 2 kbp flanks.] Genotype calling for the parental populations follows the workflow cited above.
 
