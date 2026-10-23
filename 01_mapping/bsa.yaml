@@ -1,0 +1,29 @@
+# Configuration for the Snakemake workflow (https://github.com/jgerchen/polyploid_variant_calling)
+# Replace every /path/to/... with a path on your system.
+
+# Input files
+input_fasta: "/path/to/Arabidopsis_arenosa_genome.softmasked.fna"   # reference genome, see README for download link
+sample_list: "/path/to/bsa_samples.tsv"                              # provided in this folder
+sub_intervals: "/path/to/bsa_intervals.lst"                          # provided in this folder
+fourfold: "None"
+hetmask: "None"
+paired_end_res: '.*_1\.fastq\.gz$:.*_2\.fastq\.gz$'
+
+# Pre-existing directories
+cluster_code_dir: "/path/to/prerun_scripts"       # helper scripts of the workflow
+fastq_dir: "/path/to/raw_fastq"                   # raw reads (ENA PRJEB111765)
+adapter_dir: "/path/to/adapters"                  # adapter files named in bsa_samples.tsv
+
+# New directories for output (created by the workflow)
+fasta_dir: "/path/to/output/fasta"
+fastqc_dir: "/path/to/output/fastqc"
+fastq_trimmed_dir: "/path/to/output/fastq_trimmed"
+bam_dir: "/path/to/output/bam"
+gvcf_dir: "/path/to/output/gvcf"
+vcf_dir: "/path/to/output/vcf"
+vcf_filtered: "/path/to/output/vcf_filtered"
+log_dir: "/path/to/output/log"
+depthmask_dir: "/path/to/output/depth_mask"
+report_dir: "/path/to/output/report"
+sample_read_file: "/path/to/output/bsa_sample_reads.tsv"
+plot_bamstats: 0
