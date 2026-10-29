@@ -84,6 +84,14 @@ phenotype table (`F2-both-treatments.xlsx`).
 [TO BE ADDED: FST in 1 kbp windows with piawka, top 1% windows, window-to-gene assignment with
 2 kbp flanks.] Genotype calling for the parental populations follows the workflow cited above.
 
+### 7. Tissue-specific expression (07_gene_expression/)
+
+Gene_expression_BSA-NEW.R classifies the candidate genes by expression level in root tip, root and leaf tissues (rosette, cauline and adult vascular leaves) using the Arabidopsis tissue atlas (Expression Atlas E-MTAB-7978). Genes of the whole atlas are classified in each tissue as lowly (<= 25th percentile of mean TPM), medium or highly (>= 75th percentile) expressed, and the proportions of the candidate genes in these classes are compared with the genome-wide proportions expected for a random set of genes.
+
+Inputs (put into input/):
+
+E-MTAB-7978-query-results.tpms.tsv: TPM table, download from https://www.ebi.ac.uk/gxa/experiments/E-MTAB-7978/Downloads
+Candidate_genes_AT_codes.txt: tab-separated table with a column A.thaliana containing the A. thaliana orthologs of the candidate genes (from Supplementary Data S2)
 
 ## Input data not in this repository
 
