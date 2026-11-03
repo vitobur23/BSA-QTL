@@ -1,0 +1,60 @@
+#Input files
+input_fasta: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/arenosa_genome_grini/Arabidopsis_arenosa_genome.softmasked.fna"
+# the following is line same as arenosalyrata
+sample_list: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/settings_arenosalyrata/arenosalyrata_samples.tsv"
+sub_intervals: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/settings_lyrataarenosa/lyrataarenosa_intervals.lst"
+fourfold: "None"
+hetmask: "None"
+
+#Pre-existing directories
+# the following line is same as arenosalyrata
+cluster_code_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/settings_arenosalyrata/prerun_scripts"
+fastq_dir: ["/path/to/ERC/raw_data", "/path/to/lyrata_vcf/symlinks_fastq_data/ENA_downloaded_SRA_files", "/path/to/lyrata_vcf/symlinks_fastq_data/other_fastq_files_in_Filips_fastq_data_folder", "/path/to/lyrata_vcf/Polina_Anna_Rosi_fastq"]
+adapter_dir: "/path/to/600_genomes/adapters"
+#New directories for output
+fasta_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/fasta"
+# the following line is same as arenosalyrata
+fastqc_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/arenosalyrata_results/fastqc"
+# the following line is same as arenosalyrata
+fastq_trimmed_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/arenosalyrata_results/fastq_trimmed"
+bam_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/bam"
+gvcf_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/gvcf"
+vcf_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/vcf"
+vcf_filtered: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/vcf_filtered"
+log_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/log"
+depthmask_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/depth_mask"
+report_dir: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/lyrataarenosa_results/report"
+# the following line is same as arenosalyrata
+sample_read_file: "/path/to/arenosa_lyrata_serpentine/fastq_to_vcf/arenosalyrata_results/sample_read_file.tsv"
+
+# Extra settings
+
+# Skipping plot-bamstats because of error
+plot_bamstats: 0
+
+# Decrease memory for rule get_sample_reads
+get_sample_reads_mem_mb: 1000
+
+# Increase memory, disc space and runtime for rule GenotypeGenomicsDBSub
+GenotypeGenomicsDBSub_mem_mb: 280000
+GenotypeGenomicsDBSub_disk_mb: 350000
+GenotypeGenomicsDBSub_runtime: "168h"
+
+# Troubleshooting GenotypeGenomicsDBSub
+# 2026-01-18 changed from 1 to 0
+GATK_GenotypeGVCF_ignore_crash: 0
+
+# Increase memory, disc space and runtime for rule GenomicsDBimportSub
+GenomicsDBimportSub_mem_mb: 64000
+GenomicsDBimportSub_disk_mb: 100000
+GenomicsDBimportSub_runtime: "24h"
+
+# Increase memory for all filtering jobs
+filter_mem_mb: 128000
+
+# Settings for filtering
+gen_min_depth: 4 # default: 8
+gen_max_missing: 0.5
+
+invariant_min_depth: 4 # default: 10
+invariant_max_missing: 0.1
