@@ -1,0 +1,37 @@
+# Configuration of the polyploid_variant_calling Snakemake workflow
+# (https://github.com/jgerchen/polyploid_variant_calling) used to call variants
+# for all samples against the A. arenosa reference genome. Paths are placeholders.
+# Only the settings relevant for reproducing the filtered VCF are kept.
+
+# Input files
+input_fasta: "path/to/Arabidopsis_arenosa_genome.softmasked.fna"   # Bramsiepe et al. 2023
+sample_list: "path/to/samples.tsv"            # sample ID <TAB> library <TAB> adapter file <TAB> ploidy
+sub_intervals: "path/to/intervals.lst"        # the eight assembled scaffolds, one line per scaffold
+fourfold: "None"
+hetmask: "None"
+
+# Directories (to be created by the user)
+fastq_dir: ["path/to/raw_fastq"]
+adapter_dir: "path/to/adapters"
+fasta_dir: "path/to/results/fasta"
+fastqc_dir: "path/to/results/fastqc"
+fastq_trimmed_dir: "path/to/results/fastq_trimmed"
+bam_dir: "path/to/results/bam"
+gvcf_dir: "path/to/results/gvcf"
+vcf_dir: "path/to/results/vcf"
+vcf_filtered: "path/to/results/vcf_filtered"
+log_dir: "path/to/results/log"
+depthmask_dir: "path/to/results/depth_mask"
+report_dir: "path/to/results/report"
+sample_read_file: "path/to/results/sample_read_file.tsv"
+
+# Filtering inside the workflow
+gen_min_depth: 4            # genotypes with lower depth are set to missing (workflow default: 8)
+gen_max_missing: 0.5
+invariant_min_depth: 4      # workflow default: 10
+invariant_max_missing: 0.1
+
+# Resources of the memory-heavy rules (adjust to your system)
+GenotypeGenomicsDBSub_mem_mb: 280000
+GenomicsDBimportSub_mem_mb: 64000
+filter_mem_mb: 128000
