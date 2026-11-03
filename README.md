@@ -81,8 +81,8 @@ tests the reciprocal-cross effect. Inputs: `crossing_design.csv` / genealogy tab
 phenotype table (`F2-both-treatments.xlsx`).
 
 ### 6. FST scan (`06_fst_scan/`)
-[TO BE ADDED: FST in 1 kbp windows with piawka, top 1% windows, window-to-gene assignment with
-2 kbp flanks.] Genotype calling for the parental populations follows the workflow cited above.
+FST in 1 kbp windows with piawka, top 1% windows, window-to-gene assignment with
+2 kbp flanks. Genotype calling for the parental populations follows the workflow cited above.
 
 ### 7. Tissue-specific expression (07_gene_expression/)
 
@@ -95,7 +95,7 @@ Candidate_genes_AT_codes.txt: tab-separated table with a column A.thaliana conta
 
 ## Input data not in this repository
 
-- Raw reads: ENA PRJEB111765 , [[[[FST data still to add]]]]
+- Raw reads: The raw sequencing data of the F2 bulks are available at the European Nucleotide Archive (ENA) under accession code PRJEB111765. Genome resequencing data of the parental populations used for the FST divergence scan are available from the NCBI Sequence Read Archive under BioProject accession codes PRJNA667586 (Konečná et al., 2021; populations S1 and N1) and PRJNA929698 (Celestini et al., 2026), and from the European Nucleotide Archive under accession code PRJEB129297 (newly sequenced individuals; 15 from population S and 14 from population N).
 - Reference genome and annotation: see link above
 - A. thaliana ortholog table: <https://github.com/mduchoslav/Brassicaceae_orthology>
 - Phenotype data: see Supplementary Data of the article
